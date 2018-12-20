@@ -8,23 +8,26 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import Login from '../EstudoReactNative/src/components/login';
+import Logo from '../EstudoReactNative/src/components/logo';
 
 const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
+  ios: 'Está usando ios',
   android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
+    'Está usando android',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.helloWorld}> Olá mundo!!!</Text>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
+        <Logo/>
+        <Login type="Login"/> 
         <Text style={styles.instructions}>{instructions}</Text>
+        <View style={styles.signupTextCont}>
+          <Text style={styles.signupText}>Não tem conta ainda? </Text>
+          <Text style={styles.signupButton}>Criar conta </Text>
+        </View>
       </View>
     );
   }
@@ -35,20 +38,28 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+    backgroundColor: '#FFFFFF',
   },
   instructions: {
+    //flex: 1,
     textAlign: 'center',
     color: '#333333',
-    marginBottom: 5,
+    marginBottom: 5
   },
-  helloWorld: {
-    textAlign: "center",
-    fontSize: 35
+  signupTextCont:{
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'flex-end',    
+    justifyContent: "center",
+    marginBottom: 10,
+    flexDirection: "row"
+  },
+  signupText:{
+    color:"rgba(0,0,0,0.8)"
+  },
+  signupButton:{    
+    color:"rgba(0,0,0,0.9)",
+    fontSize: 11,
+    fontWeight: "500"
   }
 });
