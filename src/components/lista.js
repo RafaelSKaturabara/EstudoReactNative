@@ -5,54 +5,52 @@ import {
     StyleSheet,
     TouchableOpacity,
     Text,
-    Platform,
+    Platform
 } from 'react-native';
-import {Actions} from "react-native-router-flux";
 import Logo from './logo';
-import Signup from './signup'
+import { Actions } from "react-native-router-flux";
 
 const instructions = Platform.select({
-    ios: 'Está usando ios',
-    android: 'Está usando android'
+    ios: 'Está usando ios na lista',
+    android: 'Está usando android na lista'
 });
   
-export default class Login extends Component {
-    signup() {
-        Actions.lista();
-    };
-    render() {
+export default class Lista extends Component {
+    goBack(){
+        Actions.pop()
+    }
+    render(){
         return(
-            <View style={styles.componentLogin}>
+            <View>
                 <Logo/>
-                <View>
+                <View style={styles.componentLogin}>
                     <TextInput 
                         style={[styles.loginInput, styles.loginEmail]}
-                        placeholder="Email"
+                        placeholder="Lista teste"
                         // placeholderTextColor="#000000"    
                     />
                     <TextInput
                         style={[styles.loginInput, styles.loginSenha]}
-                        placeholder="Senha"
+                        placeholder="Vai listando"
                         secureTextEntry={true}
                     />
-                    <TouchableOpacity onPress={this.signup} style={styles.btnLogin}>
-                        <Text style={styles.txtBtnLogin}>Logar</Text>
+                    <TouchableOpacity onPress={this.goBack} style={styles.btnLogin}>
+                        <Text style={styles.txtBtnLogin}>Voltar</Text>
                     </TouchableOpacity>
                 </View>
                 <Text style={styles.instructions}>{instructions}</Text>
-                <Signup/>
+                <View style={styles.signupTextCont}>
+                <Text style={styles.signupText}>Não tem conta ainda? </Text>
+                <Text style={styles.signupButton}>Criar conta </Text>
+                </View>
             </View>    
         );
-    };
+    }
 }
 
 const styles = StyleSheet.create({
     componentLogin:{
-        backgroundColor: '#FFFFFF',
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        //marginTop: 30
+        //flex:1
     },
     loginInput:{
         backgroundColor: "rgba(0,0,0,0.3)",
@@ -87,5 +85,21 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#333333',
         marginBottom: 5
+    },
+    signupTextCont:{
+        flexGrow: 1,
+        justifyContent: 'center',
+        alignItems: 'flex-end',    
+        justifyContent: "center",
+        marginBottom: 10,
+        flexDirection: "row"
+    },
+    signupText:{
+        color:"rgba(0,0,0,0.8)"
+    },
+    signupButton:{    
+        color:"rgba(0,0,0,0.9)",
+        fontSize: 11,
+        fontWeight: "500"
     }
 });

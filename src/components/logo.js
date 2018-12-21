@@ -14,6 +14,7 @@ export default class Logo extends Component{
 
 const styles = StyleSheet.create({
     logoImage:{
+
         // width: 70, 
         // height: 70,
         
@@ -23,6 +24,8 @@ const styles = StyleSheet.create({
     },
     logoTitulo:{
         textAlign: "center",
+        alignItems: "center",
+        justifyContent:"center",
         fontSize: 35
     }
 });
