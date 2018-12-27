@@ -11,7 +11,7 @@ export default class Routes extends Component {
         return(
             <Router style={styles.router}>
                 <Stack key="root">
-                    <Scene key="login" component={Login} title="Login" initial={true}/>
+                    <Scene key="login" hideNavBar={true} component={Login} title="Login" initial={true}/>
                     <Scene key="lista" component={Lista} title="Lista"/>
                     <Scene key="cameraTest" component={CameraTest} title="Teste de Câmera"/>
                     {/* <Scene key="home" component={Home}/> */}

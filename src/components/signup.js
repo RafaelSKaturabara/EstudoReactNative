@@ -4,8 +4,10 @@ import { Actions } from "react-native-router-flux";
 
 export default class Signup extends Component{
     goBack() {
-        Alert.alert('Error', 'Error message');
         Actions.cameraTest()
+    }
+    openAlert() {
+        Alert.alert('Thais vamos dormir?', "Tu é besta?")
     }
     render(){
         return(
@@ -13,6 +15,9 @@ export default class Signup extends Component{
                 <Text style={styles.signupText}>Não tem conta ainda? </Text>
                 <TouchableOpacity onPress={this.goBack}>
                     <Text style={styles.signupButton}>Teste de Câmera</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={this.openAlert}>
+                    <Text style={styles.signupButton}>Abre alert</Text>
                 </TouchableOpacity>
             </View>
         );        
