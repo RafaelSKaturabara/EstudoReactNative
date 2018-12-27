@@ -6,7 +6,7 @@ export default class WebViewSumemo extends Component {
     return (
       <WebView
         source={{uri: 'https://github.com/facebook/react-native'}}
-        style={{marginTop: 20}}
+        style={{marginTop: 15}}
       />
     );
   }

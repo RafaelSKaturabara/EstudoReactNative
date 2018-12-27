@@ -9,6 +9,9 @@ export default class Signup extends Component{
     openAlert() {
         Alert.alert('Thais vamos dormir?', "Tu é besta?")
     }
+    goWebView() {
+        Actions.webViewSumemo()
+    }
     render(){
         return(
             <View style={styles.signupTextCont}>
@@ -18,6 +21,9 @@ export default class Signup extends Component{
                 </TouchableOpacity>
                 <TouchableOpacity onPress={this.openAlert}>
                     <Text style={styles.signupButton}>Abre alert</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={this.goWebView}>
+                    <Text style={styles.signupButton}>Abre WebView</Text>
                 </TouchableOpacity>
             </View>
         );        
