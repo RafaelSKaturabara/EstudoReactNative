@@ -4,6 +4,7 @@ import {StyleSheet} from 'react-native';
 import {Router, Stack, Scene} from "react-native-router-flux";
 import Login from "./login";
 import Lista from "./lista";
+import CameraTest from "./cameraTest";
 
 export default class Routes extends Component {
     render(){
@@ -12,6 +13,7 @@ export default class Routes extends Component {
                 <Stack key="root">
                     <Scene key="login" component={Login} title="Login" initial={true}/>
                     <Scene key="lista" component={Lista} title="Lista"/>
+                    <Scene key="cameraTest" component={CameraTest} title="Teste de Câmera"/>
                     {/* <Scene key="home" component={Home}/> */}
                 </Stack>
             </Router>
