@@ -18,7 +18,7 @@ const instructions = Platform.select({
   
 export default class Login extends Component {
     signup() {
-        Actions.lista();
+        Actions.drawer();
     };
     render() {
         return(

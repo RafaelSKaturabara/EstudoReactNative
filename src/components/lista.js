@@ -19,6 +19,9 @@ export default class Lista extends Component {
     goBack(){
         Actions.pop()
     }
+    consoleWarn(){
+        console.warn("Testando")
+    }
     render(){
         return(
             <View>
@@ -41,7 +44,9 @@ export default class Lista extends Component {
                 <Text style={styles.instructions}>{instructions}</Text>
                 <View style={styles.signupTextCont}>
                 <Text style={styles.signupText}>Não tem conta ainda? </Text>
-                <Text style={styles.signupButton}>Criar conta </Text>
+                <TouchableOpacity onPress={this.consoleWarn}>
+                    <Text style={styles.signupText}> Console Warn</Text>
+                </TouchableOpacity>
                 </View>
             </View>    
         );

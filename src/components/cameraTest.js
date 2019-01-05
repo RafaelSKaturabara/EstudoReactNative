@@ -5,6 +5,7 @@ import {
     Text,
 } from 'react-native';
 import Camera from "react-native-camera";
+import Icon from 'react-native-vector-icons/Entypo';
 
 export default class CameraTest extends Component {
     render(){
@@ -16,9 +17,7 @@ export default class CameraTest extends Component {
                     }}
                     style={styles.view}
                     aspect={Camera.constants.Aspect.fill}>
-                    <Text style={styles.capture} onPress={this.takePicture.bind(this)}>
-                        Capturar
-                    </Text>
+                    <Icon size={40} color="white" onPress={this.takePicture.bind(this)} name="camera"/>      
                 </Camera>
             </View>    
         );
